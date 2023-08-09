@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
 import { Li, Ul, Button } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectVisibleContact } from 'redux/selectors';
+import { deleteContacts } from 'redux/contactsSlice';
 
-export const ContactList = ({ deleteContacts }) => {
+export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContact);
 
@@ -25,8 +25,4 @@ export const ContactList = ({ deleteContacts }) => {
       ))}
     </Ul>
   );
-};
-
-ContactList.propTypes = {
-  deleteContacts: PropTypes.func.isRequired,
 };
