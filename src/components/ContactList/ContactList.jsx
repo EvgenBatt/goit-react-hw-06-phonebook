@@ -5,11 +5,11 @@ import { selectVisibleContact } from 'redux/selectors';
 
 export const ContactList = ({ deleteContacts }) => {
   const dispatch = useDispatch();
-  const visibleContacts = useSelector(selectVisibleContact);
+  const contacts = useSelector(selectVisibleContact);
 
   return (
     <Ul>
-      {visibleContacts.map(({ name, number, id }) => (
+      {contacts.map(({ name, number, id }) => (
         <Li key={id}>
           {name + ' : ' + number}
           {
@@ -28,7 +28,5 @@ export const ContactList = ({ deleteContacts }) => {
 };
 
 ContactList.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  deleteContacts: PropTypes.func.isRequired,
 };
