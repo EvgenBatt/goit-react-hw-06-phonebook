@@ -5,7 +5,6 @@ import { Title, SubTitle, EmptyContact } from './App.styled';
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { Toaster } from 'react-hot-toast';
-import { deleteContacts } from 'redux/contactsSlice';
 
 export const App = () => {
   const contacts = useSelector(selectContacts);
@@ -30,7 +29,7 @@ export const App = () => {
       ) : (
         <EmptyContact>Your phonebook is empty. Add first contact!</EmptyContact>
       )}
-      {contacts.length > 0 && <ContactList deleteContacts={deleteContacts} />}
+      {contacts.length > 0 && <ContactList />}
     </div>
   );
 };

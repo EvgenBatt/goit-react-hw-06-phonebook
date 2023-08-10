@@ -14,7 +14,7 @@ const contactsSlice = createSlice({
 
   reducers: {
     addContacts(state, action) {
-      state.users.push(action.payload);
+      state.users.unshift(action.payload);
       toast.success('Create new user successfully');
     },
     deleteContacts(state, action) {

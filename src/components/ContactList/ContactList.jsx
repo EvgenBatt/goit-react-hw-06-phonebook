@@ -11,7 +11,7 @@ export const ContactList = () => {
     <Ul>
       {contacts.map(({ name, number, id }) => (
         <Li key={id}>
-          {name + ' : ' + number}
+          {name + ': ' + number}
           {
             <Button
               type="button"
